@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../components/CustomButton.dart';
 import '../controller/FirstScreenController.dart';
+import 'SecondScreen.dart';
 
 class FirstScreen extends StatelessWidget {
   final FirstScreenController controller = Get.put(FirstScreenController());
@@ -119,7 +120,7 @@ class FirstScreen extends StatelessWidget {
               ),
               CustomButton(
                 text: 'NEXT',
-                onPressed: () {},
+                onPressed: () => Get.to(SecondScreen()),
               ),
             ],
           ),
