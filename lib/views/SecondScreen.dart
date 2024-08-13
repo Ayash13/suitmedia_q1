@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:suitmedia_test/components/CustomButton.dart';
 
+import '../components/CustomButton.dart';
 import '../controller/FirstScreenController.dart';
 import '../controller/SecondScreenController.dart';
 import 'ThirdScreen.dart';
@@ -64,7 +64,9 @@ class SecondScreen extends StatelessWidget {
               ),
               Obx(
                 () => Text(
-                  'Selected User Name ${secondScreenController.selectedUserName.value}',
+                  secondScreenController.selectedUserName.value.isEmpty
+                      ? 'Selected User Name'
+                      : secondScreenController.selectedUserName.value,
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
