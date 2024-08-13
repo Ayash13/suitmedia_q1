@@ -4,6 +4,7 @@ import 'package:suitmedia_test/components/CustomButton.dart';
 
 import '../controller/FirstScreenController.dart';
 import '../controller/SecondScreenController.dart';
+import 'ThirdScreen.dart';
 
 class SecondScreen extends StatelessWidget {
   final FirstScreenController firstScreenController = Get.find();
@@ -20,6 +21,13 @@ class SecondScreen extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
+        ),
+        bottom: PreferredSize(
+          child: Divider(
+            thickness: 0.5,
+            height: 0,
+          ),
+          preferredSize: const Size.fromHeight(10.0),
         ),
       ),
       body: SizedBox(
@@ -66,7 +74,10 @@ class SecondScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CustomButton(text: "Choose a User", onPressed: () {}),
+                child: CustomButton(
+                  text: "Choose a User",
+                  onPressed: () => Get.to(ThirdScreen()),
+                ),
               )
             ],
           ),
